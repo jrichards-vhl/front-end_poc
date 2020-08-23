@@ -27,5 +27,12 @@
 /public/assets
 .byebug_history
 
+# Ignore compiled assets.
+/app/assets/javascripts/bundle.js
+/app/assets/stylesheets/bundle.css
+
+# Ignore compiled docs.
+/public/jsdoc/
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key

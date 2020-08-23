@@ -1,5 +1,48 @@
 {
   "name": "front-end_poc",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "build:dev": "./node_modules/.bin/webpack --env.NODE_ENV=development --config ./config/webpack/dev.js",
+    "refresh": "rm -rf node_modules && yarn install",
+    "audit": "yarn run tsc && yarn run eslint",
+    "audit:watch": "yarn run tsc --watch && yarn run eslint --watch",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "tsc": "./node_modules/.bin/tsc",
+    "build-docs": "jsdoc -c ./jsdocrc.json"
+  },
+  "dependencies": {
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/preset-env": "7.11.0",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "8.1.0",
+    "browserslist": "4.14.0",
+    "clean-webpack-plugin": "3.0.0",
+    "css-loader": "^4.2.1",
+    "dotenv": "8.2.0",
+    "eslint": "7.7.0",
+    "eslint-config-google": "^0.14.0",
+    "file-loader": "^6.0.0",
+    "jsdoc": "^3.6.5",
+    "jsdoc-plugin-typescript": "^2.0.5",
+    "mini-css-extract-plugin": "^0.10.0",
+    "postcss-loader": "^3.0.0",
+    "resolve-url-loader": "^3.1.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-webpack-plugin": "2.1.0",
+    "ts-loader": "^8.0.2",
+    "typescript": "3.9.7",
+    "webpack": "4.44.1",
+    "webpack-cli": "^3.3.12",
+    "yargs": "^15.4.1"
+  }
 }
