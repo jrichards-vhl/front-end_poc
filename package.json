@@ -41,6 +41,9 @@
     "stylelint-webpack-plugin": "2.1.0",
     "ts-loader": "^8.0.2",
     "typescript": "3.9.7",
+    "vue": "^3.0.2",
+    "vue-loader": "^15.9.5",
+    "vue-template-compiler": "^2.6.12",
     "webpack": "4.44.1",
     "webpack-cli": "^3.3.12",
     "yargs": "^15.4.1"

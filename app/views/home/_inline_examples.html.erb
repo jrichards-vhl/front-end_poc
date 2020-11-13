@@ -1,0 +1,49 @@
+<section>
+  <h2>
+    DOM Templates
+  </h2>
+  <p>
+    This is a paragraph rendered on the server as a .erb by Rails.  The next
+    paragraph however is rendered at runtime by Vue component.
+  </p>
+  <InlineExample />
+  <p>
+    This paragraph is again rendered by Rails.  With DOM templates, we can
+    use Vue to progressively enhance content rendered on the server.
+  </p>
+  <InlineWithCSS>
+    This paragraph is rendered <i>within</i> an inline component.  The component
+    brings its own CSS, which is used to stype the contents when Vue renders
+    the template.
+  </InlineWithCSS>
+  <h3>Pros</h3>
+  <ul>
+    <li>
+      Based on familiar technology.
+    </li>
+    <li>
+      Less framework buy-in.
+    </li>
+    <li>
+      Can still take advantage of all of the state management used by Vue.
+    </li>
+  </ul>
+  <h3>Cons</h3>
+  <ul>
+    <li>
+      HTML, CSS and JS have to live in separate places.  Maintaining a
+      component as a cohesive unit is diffuclt.
+    </li>
+    <li>
+      Unit testing a "component" is more difficult because the markup lives
+      as server code, while JS can only be tested at runtime.
+    </li>
+    <li>
+      Rendering many partials in Rails may be slower than rendering components
+      on the client.
+    </li>
+    <li>
+      Type support is sketchy.
+    </li>
+  </ul>
+</section>

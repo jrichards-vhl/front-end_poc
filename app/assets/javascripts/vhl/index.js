@@ -1,35 +1,20 @@
-import {Course} from './course/course';
-
 /**
- * Information required for enrolling a student in a course..
- * @typedef {object} Index.StudentInfo
- * @property {string} firstname The student's first name.
- * @property {string} lastname The student's last name.
- */
-
-/**
- * @fileoverview
- * This is the entry file into the JS application.  We can have
- * multiple applications that live on the same page, all using the same
- * libraries if need be.  It comes down to how we want to split the code, which
- * is doable with Webpack.
- */
-
-/**
- * Tells the bundler to include a css file.  This will be compiled and placed
- * in assets/stylesheets/ in the same way that the JS is placed in
- * assets/javascripts.
+ * In order to support DOM templates (templates rendered by .erb's), we have to
+ * import a distribution of Vue that includes its template compiler.  The
+ * default Vue distribution assumes a bundler with the ability to compile
+ * component files at build time.
+ * @see node_modules/vue/README.md
  */
 // @ts-ignore
-require('../../stylesheets/vhl/index.scss');
+import * as Vue from 'vue/dist/vue.esm-browser';
+import {InlineExample} from './components/inline_example';
+import {InlineWithCSS} from './components/inline_with_css';
 
-/** @type {Array<Index.StudentInfo>} */
-const students = [
-  {firstname: 'Jack', lastname: 'Thompson'},
-  {firstname: 'Amanda', lastname: 'Wallace'},
-  {firstname: 'Phil', lastname: 'Harper'},
-];
+const app = Vue.createApp({
+  template: '#root-template',
+});
 
-const myCourse = new Course('Fun With Fireworks 101', students);
+app.component('InlineExample', InlineExample);
+app.component('InlineWithCSS', InlineWithCSS);
 
-console.log(myCourse.getStudents());
+app.mount('#vue-app');
